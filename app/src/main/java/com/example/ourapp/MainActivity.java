@@ -16,6 +16,7 @@ public class MainActivity extends AppCompatActivity {
         diaryfragment =new diaryFragment();
         passwordfragment = new passwordFragment();
         checkActfragment = new checkActFragment();
+        mainfragment= new mainFragment();
         changeFragemnt(0);
     }
 
@@ -28,10 +29,10 @@ public class MainActivity extends AppCompatActivity {
                 getSupportFragmentManager().beginTransaction().replace(R.id.container,mainfragment).commit();
                 break;
             case 2: // 오늘의 기분 선택화면
-                getSupportFragmentManager().beginTransaction().replace(R.id.container,checkActfragment).commit();
+                getSupportFragmentManager().beginTransaction().replace(R.id.container,checkActfragment).addToBackStack(null).commit();
                 break;
             case 3://일기 작성 화면
-                getSupportFragmentManager().beginTransaction().replace(R.id.container,diaryfragment).commit();
+                getSupportFragmentManager().beginTransaction().replace(R.id.container,diaryfragment).addToBackStack(null).commit();
                 break;
         }
     }
