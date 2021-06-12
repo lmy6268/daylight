@@ -1,4 +1,4 @@
-package com.example.ourapp;
+package com.example.daylight;
 
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;

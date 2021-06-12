@@ -1,4 +1,4 @@
-package com.example.ourapp;
+package com.example.daylight;
 
 import android.os.Bundle;
 
@@ -9,12 +9,12 @@ import android.view.View;
 import android.view.ViewGroup;
 
 
-public class diaryFragment extends Fragment {
+public class checkActFragment extends Fragment {
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        ViewGroup rootView= (ViewGroup) inflater.inflate(R.layout.fragment_diary, container, false);
-
-        return rootView;
+        // Inflate the layout for this fragment
+        return inflater.inflate(R.layout.fragment_check_act, container, false);
     }
 }
