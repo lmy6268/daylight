@@ -36,4 +36,11 @@ public class mainFragment extends Fragment {
         });
         return rootView;
     }
+    public void showDiarylog(){
+        customDialog octDialog = new customDialog(getContext(),R.layout.dialog_diary);
+        octDialog.setCanceledOnTouchOutside(true);
+        octDialog.setCancelable(true);
+        octDialog.getWindow().setLayout(WindowManager.LayoutParams.MATCH_PARENT, WindowManager.LayoutParams.MATCH_PARENT);
+        octDialog.show();
+    }
 }
