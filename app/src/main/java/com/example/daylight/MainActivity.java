@@ -35,10 +35,10 @@ public class MainActivity extends AppCompatActivity {
                     changeFragemnt(1);
                     break;
                 case R.id.active_achievements:
-                    changeFragemnt(2);
+                    changeFragemnt(1);
                     break;
                 case R.id.active_setup:
-                    changeFragemnt(3);
+                    changeFragemnt(2);
                     break;
             }
             return true;
@@ -54,7 +54,7 @@ public class MainActivity extends AppCompatActivity {
             case 1://메인화면
                 getSupportFragmentManager().beginTransaction().replace(R.id.container,mainfragment).commit();
                 break;
-            case 3://설정 화면
+            case 2://설정 화면
                 getSupportFragmentManager().beginTransaction().replace(R.id.container,settingFragment).commit();
                 break;
         }

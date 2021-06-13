@@ -6,6 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="@color/white"
     tools:context=".mainFragment">
 
   <HorizontalScrollView
@@ -17,28 +18,33 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_gravity="center_horizontal"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:layout_margin="10dp"
+        >
 
       <TableRow>
 
-        <Button android:layout_height="wrap_content"
-            android:layout_width="wrap_content"
-            android:id="@+id/btn1"
-            android:textColor="@color/black"
-            android:backgroundTint="@color/colorAccent1"
-            android:textStyle="bold|italic"
-            android:layout_margin="15dp"
-            android:text="일기 작성"/>
-
         <Button
+            android:id="@+id/btn1"
+            android:textStyle="italic"
+            android:background="@color/colorAccent1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="@color/black"
-            android:backgroundTint="@color/colorAccent1"
-            android:textStyle="bold|italic"
+            android:layout_gravity="center"
+            android:layout_margin="5dp"
+            android:text="  오늘의 일기  "
+            />
+
+        <Button
             android:id="@+id/btn2"
-            android:layout_margin="15dp"
-            android:text="기분 입력"/>
+            android:textStyle="italic"
+            android:background="@color/colorAccent1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="5dp"
+            android:text="  오늘의 기분  "
+            />
 
       </TableRow>
 
@@ -47,27 +53,23 @@
 
 
   <LinearLayout
+      android:id="@+id/lll"
       android:layout_width="match_parent"
-      android:layout_height="wrap_content"
+      android:layout_height="match_parent"
       android:orientation="horizontal">
+
+    <ImageView
+        android:layout_width="410dp"
+        android:layout_gravity="center"
+        android:layout_height="573dp"
+        android:src="@drawable/img1"/>
 
     <LinearLayout
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:layout_weight="1"
 
         android:orientation="vertical"/>
 
-      <TextView
-          android:id="@+id/tv1"
-          android:layout_width="match_parent"
-          android:layout_height="wrap_content"
-          android:paddingLeft="16dp"
-          android:gravity="center"
-          android:paddingRight="16dp"
-          android:textColor="@color/black"
-          android:textSize="30sp"
-          tools:text="이어 인 픽셀 구현" />
-
-    </LinearLayout>
+  </LinearLayout>
   </LinearLayout>
