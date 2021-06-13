@@ -15,6 +15,7 @@ public class diaryFragment extends Fragment {
                              Bundle savedInstanceState) {
         ViewGroup rootView= (ViewGroup) inflater.inflate(R.layout.fragment_diary, container, false);
 
+
         return rootView;
     }
 }
