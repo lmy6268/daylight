@@ -107,9 +107,7 @@ public class customDialog extends Dialog {
     {
         final View innerView = getLayoutInflater().inflate(R.layout.emolog, null);
         Button[] btnEmo;
-        for (int i=0;i<6;i++){
-            btnEmo[i]=innerView.findViewById(R.id.btn)
-        }
+
         customDialog octDialog = new customDialog(getContext());
         octDialog.setContentView(innerView);
         octDialog.setCanceledOnTouchOutside(false);// 다이알로그 바깥영역 터치시, 다이알로그 닫힘

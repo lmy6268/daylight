@@ -3,8 +3,16 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
-
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="오늘의 기분 선택"
+        android:layout_marginBottom="50dp"
+        />
+    <!--기분 선택-->
     <LinearLayout
+        android:layout_gravity="center"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical">
@@ -25,35 +33,40 @@
                     android:id="@+id/btnEmo1"
                     android:layout_width="40dp"
                     android:layout_height="40dp"
+                    android:layout_gravity="center"
                     android:background="@drawable/circlebutton_green" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="화남" />
+                    android:layout_gravity="center"
+                    android:text="행복함" />
             </LinearLayout>
 
             <LinearLayout
-                android:layout_marginLeft="10dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
                 android:orientation="vertical">
 
                 <Button
                     android:id="@+id/btnEmo2"
                     android:layout_width="40dp"
                     android:layout_height="40dp"
+                    android:layout_gravity="center"
                     android:background="@drawable/circlebutton_red" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="" />
+                    android:layout_gravity="center"
+                    android:text="화남" />
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
 
                 android:orientation="vertical">
 
@@ -61,12 +74,14 @@
                     android:id="@+id/btnEmo3"
                     android:layout_width="40dp"
                     android:layout_height="40dp"
+                    android:layout_gravity="center"
                     android:background="@drawable/circlebutton_blue" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="화남" />
+                    android:layout_gravity="center"
+                    android:text="슬픔" />
             </LinearLayout>
         </LinearLayout>
 
@@ -78,21 +93,24 @@
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+
                 android:orientation="vertical">
 
                 <Button
                     android:id="@+id/btnEmo4"
                     android:layout_width="40dp"
                     android:layout_height="40dp"
-                    android:background="@drawable/circlebutton_red" />
+                    android:background="@drawable/circlebutton_orange" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="화남" />
+                    android:text="즐거움" />
             </LinearLayout>
 
             <LinearLayout
+                android:layout_marginLeft="10dp"
+
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
@@ -101,29 +119,33 @@
                     android:id="@+id/btnEmo5"
                     android:layout_width="40dp"
                     android:layout_height="40dp"
-                    android:background="@drawable/circlebutton_red" />
+                    android:background="@drawable/circlebutton_pink" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="화남" />
+                    android:text="적당함" />
             </LinearLayout>
 
             <LinearLayout
+                android:layout_marginLeft="10dp"
+
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
 
                 <Button
+                    android:layout_gravity="center"
                     android:id="@+id/btnEmo6"
                     android:layout_width="40dp"
                     android:layout_height="40dp"
-                    android:background="@drawable/circlebutton_red" />
+                    android:background="@drawable/circlebutton_yellow" />
 
                 <TextView
+                    android:layout_gravity="center"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="화남" />
+                    android:text="나쁨" />
             </LinearLayout>
         </LinearLayout>
     </LinearLayout>
