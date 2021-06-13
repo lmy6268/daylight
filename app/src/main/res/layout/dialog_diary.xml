@@ -23,6 +23,7 @@
             android:text="일기 입력" />
 
 
+
     </LinearLayout>
     <!--메뉴 바-->
     <LinearLayout
