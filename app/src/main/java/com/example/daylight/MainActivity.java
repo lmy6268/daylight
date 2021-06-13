@@ -35,9 +35,6 @@ public class MainActivity extends AppCompatActivity {
         bottomNavigationView.setOnNavigationItemSelectedListener(item -> {
             switch (item.getItemId()) {
                 case R.id.active_home:
-                    changeFragemnt(0);
-                    break;
-                case R.id.active_chart:
                     changeFragemnt(1);
                     break;
                 case R.id.active_achievements:
