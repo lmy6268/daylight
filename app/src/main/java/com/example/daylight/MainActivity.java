@@ -25,19 +25,15 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
         mainfragment= new mainFragment();
         passwordfragment = new passwordFragment();
-
         settingFragment= new settingFragment();
-
         bottomNavigationView = findViewById(R.id.bottomNavi);
         bottomNavigationView.setOnNavigationItemSelectedListener(item -> {
             switch (item.getItemId()) {
                 case R.id.active_home:
-                    changeFragemnt(0);
+                    changeFragemnt(1);
                     break;
-
                 case R.id.active_achievements:
                     changeFragemnt(1);
                     break;
@@ -47,7 +43,6 @@ public class MainActivity extends AppCompatActivity {
             }
             return true;
         });
-
         changeFragemnt(0);
     }
 
