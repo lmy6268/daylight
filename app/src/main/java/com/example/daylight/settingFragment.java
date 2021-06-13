@@ -23,25 +23,19 @@ public class settingFragment extends Fragment {
         btn6.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                showDiarylog();
+
             }
         });
 
         btn7.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                showDiarylog();
+
             }
         });
         return rootView;
     }
 
-    public void showDiarylog(){
-        customDialog octDialog = new customDialog(getContext(),R.layout.dialog_diary);
-        octDialog.setCanceledOnTouchOutside(true);
-        octDialog.setCancelable(true);
-        octDialog.getWindow().setLayout(WindowManager.LayoutParams.MATCH_PARENT, WindowManager.LayoutParams.MATCH_PARENT);
-        octDialog.show();
-    }
+
 }
 

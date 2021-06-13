@@ -2,6 +2,8 @@ package com.example.daylight;
 
 
 import android.content.Context;
+import android.graphics.Color;
+import android.graphics.drawable.GradientDrawable;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -23,19 +25,6 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 
 import static android.content.Context.MODE_PRIVATE;
-//import java.io.UnsupportedEncodingException;
-//import java.security.Key;
-//import java.security.InvalidAlgorithmParameterException;
-//import java.security.InvalidKeyException;
-//import java.security.NoSuchAlgorithmException;
-//import javax.crypto.BadPaddingException;
-//import javax.crypto.Cipher;
-//import javax.crypto.IllegalBlockSizeException;
-//import javax.crypto.NoSuchPaddingException;
-//import javax.crypto.spec.IvParameterSpec;
-//import javax.crypto.spec.SecretKeySpec;
-//import java.util.Base64; import java.util.Base64.Decoder; import java.util.Base64.Encoder;
-
 
 public class passwordFragment extends Fragment {
     EditText pwd1, pwd2, pwd3, pwd4;
@@ -43,10 +32,6 @@ public class passwordFragment extends Fragment {
     Button btnAccess, btnRegister;
     int checked;
     BottomNavigationView bottomNavi;
-//    private String privateKey;
-//    private UserDatabaseHelper userDatabaseHelper;
-//    public static final String TABLE_NAME = "user";
-//    SQLiteDatabase database;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -59,6 +44,15 @@ public class passwordFragment extends Fragment {
         btnAccess = rootView.findViewById(R.id.btnAccess);
         btnRegister = rootView.findViewById(R.id.btnRegister);
 
+
+        GradientDrawable bgShape = (GradientDrawable) pwd1.getBackground();
+        bgShape.setColor(Color.BLUE);
+        GradientDrawable bgShape2 = (GradientDrawable) pwd2.getBackground();
+        bgShape.setColor(Color.BLUE);
+        GradientDrawable bgShape3 = (GradientDrawable) pwd3.getBackground();
+        bgShape.setColor(Color.BLUE);
+        GradientDrawable bgShape4 = (GradientDrawable) pwd4.getBackground();
+        bgShape.setColor(Color.BLUE);
         btnAccess.setOnClickListener(new View.OnClickListener() {
 
             @Override
@@ -162,70 +156,6 @@ public class passwordFragment extends Fragment {
 
     }
 }
-//암호 시스템
-//    public String savePassword(String passwd)
-//            throws NoSuchPaddingException, InvalidAlgorithmParameterException, UnsupportedEncodingException, IllegalBlockSizeException, BadPaddingException, NoSuchAlgorithmException, InvalidKeyException {
-//    {
-//        String encKey;
-//        AES256Util aes = new AES256Util(privateKey);
-//        encKey = aes.aesEncode(passwd);
-//        return encKey;
-//    }
-//}
-//class AES256Util {
-//    private String iv;
-//    private Key keySpec;
-//
-//    public AES256Util(String key) throws UnsupportedEncodingException {
-//        this.iv = key.substring(0, 16);
-//
-//        byte[] keyBytes = new byte[16];
-//        byte[] b = key.getBytes("UTF-8");
-//        int len = b.length;
-//        if (len > keyBytes.length) {
-//            len = keyBytes.length;
-//        }
-//        System.arraycopy(b, 0, keyBytes, 0, len);
-//        SecretKeySpec keySpec = new SecretKeySpec(keyBytes, "AES");
-//
-//        this.keySpec = keySpec;
-//    }
-//
-//
-//    // 암호화
-//    public String aesEncode(String str) throws java.io.UnsupportedEncodingException,
-//            NoSuchAlgorithmException,
-//            NoSuchPaddingException,
-//            InvalidKeyException,
-//            InvalidAlgorithmParameterException,
-//            IllegalBlockSizeException,
-//            BadPaddingException {
-//        Cipher c = Cipher.getInstance("AES/CBC/PKCS5Padding");
-//        c.init(Cipher.ENCRYPT_MODE, keySpec, new IvParameterSpec(iv.getBytes()));
-//
-//        byte[] encrypted = c.doFinal(str.getBytes("UTF-8"));
-//        Encoder encoder = Base64.getEncoder();
-//        byte[] encodedBytes = encoder.encode(encrypted);
-//        String enStr = new String(encodedBytes);
-//
-//        return enStr;
-//    }
-//
-//    //복호화
-//    public String aesDecode(String str) throws java.io.UnsupportedEncodingException,
-//            NoSuchAlgorithmException,
-//            NoSuchPaddingException,
-//            InvalidKeyException,
-//            InvalidAlgorithmParameterException,
-//            IllegalBlockSizeException,
-//            BadPaddingException {
-//        Cipher c = Cipher.getInstance("AES/CBC/PKCS5Padding");
-//        c.init(Cipher.DECRYPT_MODE, keySpec, new IvParameterSpec(iv.getBytes("UTF-8")));
-//        Decoder decoder = Base64.getDecoder();
-//        byte[] byteStr = decoder.decode(str.getBytes());
-//
-//        return new String(c.doFinal(byteStr),"UTF-8");
-//    }
 
 
 
