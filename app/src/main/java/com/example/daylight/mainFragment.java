@@ -29,6 +29,7 @@ public class mainFragment extends Fragment {
         btn1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                customDialog.showDiarylog();
             }
         });
         btn2.setOnClickListener(new View.OnClickListener() {
