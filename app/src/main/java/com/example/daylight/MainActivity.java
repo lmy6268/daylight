@@ -1,22 +1,55 @@
 package com.example.daylight;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 import android.os.Bundle;
-
+import android.view.MenuItem;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 public class MainActivity extends AppCompatActivity {
-    diaryFragment diaryfragment;
-    passwordFragment passwordfragment;
-    checkActFragment checkActfragment;
-    mainFragment mainfragment;
+
+
+    private FragmentManager fm;
+    private FragmentTransaction ft;
+    private passwordFragment passwordfragment;
+    private checkActFragment checkActfragment;
+    private mainFragment mainfragment;
+    private settingFragment settingFragment;
+    private MainActivity MainActivity;
+    private BottomNavigationView bottomNavigationView;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        diaryfragment =new diaryFragment();
+
+        mainfragment= new mainFragment();
         passwordfragment = new passwordFragment();
         checkActfragment = new checkActFragment();
-        mainfragment= new mainFragment();
+        settingFragment= new settingFragment();
+
+        bottomNavigationView = findViewById(R.id.bottomNavi);
+        bottomNavigationView.setOnNavigationItemSelectedListener(item -> {
+            switch (item.getItemId()) {
+                case R.id.active_home:
+                    changeFragemnt(0);
+                    break;
+                case R.id.active_chart:
+                    changeFragemnt(1);
+                    break;
+                case R.id.active_achievements:
+                    changeFragemnt(2);
+                    break;
+                case R.id.active_setup:
+                    changeFragemnt(3);
+                    break;
+            }
+            return true;
+        });
+
         changeFragemnt(0);
     }
 
@@ -29,10 +62,10 @@ public class MainActivity extends AppCompatActivity {
                 getSupportFragmentManager().beginTransaction().replace(R.id.container,mainfragment).commit();
                 break;
             case 2: // 오늘의 기분 선택화면
-                getSupportFragmentManager().beginTransaction().replace(R.id.container,checkActfragment).addToBackStack(null).commit();
+                getSupportFragmentManager().beginTransaction().replace(R.id.container,checkActfragment).commit();
                 break;
-            case 3://일기 작성 화면
-                getSupportFragmentManager().beginTransaction().replace(R.id.container,diaryfragment).addToBackStack(null).commit();
+            case 3://설정 화면
+                getSupportFragmentManager().beginTransaction().replace(R.id.container,settingFragment).commit();
                 break;
         }
     }
