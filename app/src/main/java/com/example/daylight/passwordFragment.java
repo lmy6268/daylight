@@ -13,6 +13,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.google.android.material.bottomnavigation.BottomNavigationView;
+
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.io.FileInputStream;
@@ -40,6 +42,7 @@ public class passwordFragment extends Fragment {
     private String pwd;
     Button btnAccess, btnRegister;
     int checked;
+    BottomNavigationView bottomNavi;
 //    private String privateKey;
 //    private UserDatabaseHelper userDatabaseHelper;
 //    public static final String TABLE_NAME = "user";
@@ -79,6 +82,8 @@ public class passwordFragment extends Fragment {
                     case 1:
                         Toast.makeText(getContext(), "접속에 성공하였습니다", Toast.LENGTH_SHORT).show();
                         MainActivity main = ( MainActivity) getActivity();
+                        bottomNavi=main.findViewById(R.id.bottomNavi);
+                        bottomNavi.setVisibility(View.VISIBLE);
                         main.changeFragemnt(1);
 
                         break;
