@@ -7,6 +7,8 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.res.ColorStateList;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
@@ -40,6 +42,7 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.InputStream;
 import java.text.SimpleDateFormat;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
@@ -47,6 +50,7 @@ import java.time.format.DateTimeFormatter;
 import java.util.Calendar;
 
 
+import static android.app.Activity.RESULT_OK;
 import static android.content.Context.MODE_PRIVATE;
 import static androidx.core.app.ActivityCompat.startActivityForResult;
 
@@ -80,6 +84,7 @@ public class customDialog extends Dialog {
         btnImage = innerView.findViewById(R.id.btnImage);
         btnBgm = innerView.findViewById(R.id.btnBgm);
         btnEmo = innerView.findViewById(R.id.btnEmo);
+        editTitle=innerView.findViewById(R.id.editTitle);
         editDiary = innerView.findViewById(R.id.editDiary);
         octDialog.setContentView(innerView);
         octDialog.setCanceledOnTouchOutside(true);// 다이알로그 바깥영역 터치시, 다이알로그 닫
@@ -93,7 +98,9 @@ public class customDialog extends Dialog {
                             .setPositiveButton("저장", new DialogInterface.OnClickListener() {
                                 public void onClick(DialogInterface dialog, int which) {
                                     try {
-                                        saveDiary(editDiary.getText().toString(), date);
+                                        String contents=editDiary.getText().toString();
+                                        String title=editTitle.getText().toString();
+                                        saveDiary(title+":"+contents, date);
                                     } catch (IOException e) {
                                         e.printStackTrace();
                                     }
@@ -139,15 +146,11 @@ public class customDialog extends Dialog {
                 isSaved = false;
             }
         });
-        btnImage.setOnClickListener(v -> {
-//            LayerDrawable layerDrawable = (LayerDrawable) new LayerDrawable();
-//            GradientDrawable gradientDrawable = (GradientDrawable) layerDrawable
-//                    .findDrawableByLayerId(R.id.gradientDrawble);
-//            gradientDrawable.setCornerRadius(50);
-        });
         btnSave.setOnClickListener(v -> {
             try {
-                saveDiary(editDiary.getText().toString(), date);
+                String contents=editDiary.getText().toString();
+                String title=editTitle.getText().toString();
+                saveDiary(title+":"+contents, date);
             } catch (IOException e) {
                 e.printStackTrace();
             }
@@ -156,22 +159,39 @@ public class customDialog extends Dialog {
             showEmolog(date, btnEmo);
         });
 //        btnImage.setOnClickListener(v -> {
-//            Intent intent = new Intent(Intent.ACTION_PICK);
-//            intent.setType(android.provider.MediaStore.Images.Media.CONTENT_TYPE);
-//            startActivityForResult(intent, RequestCode.PICK_IMAGE);
-//            Drawable img = ContextCompat.getDrawable(context, );
-//            txtVw.setCompoundDrawablesWithIntrinsicBounds(img, null, null, null);
+//            Intent intent = new Intent();
+//            intent.setType("image/*");
+//            intent.setAction(Intent.ACTION_GET_CONTENT);
+//            startActivityForResult(getOwnerActivity(), intent,0,null);
+//            Bitmap img=intent.getB
+//
+//            editDiary.setCompoundDrawablesWithIntrinsicBounds(null, img, null, null);
 //        });
 
     }
-
+//
 //    //이미지 삽입 관련
-//    Intent intent = new Intent(Intent.ACTION_PICK);
-//               intent.setDataAndType(android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI,"image/*");
+//    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+//        // Check which request we're responding to
+//        if (requestCode == 1) {
+//            // Make sure the request was successful
+//            if (resultCode == RESULT_OK) {
+//                try {
+//                    // 선택한 이미지에서 비트맵 생성
+//                    InputStream in =getOwnerActivity().getContentResolver().openInputStream(data.getData());
+//                    Bitmap img = BitmapFactory.decodeStream(in);
 //
-//    startActivityForResult(intent, GET_GALLERY_IMAGE);
 //
-//}
+//                    in.close();
+//
+//
+//
+//                } catch (Exception e) {
+//                    e.printStackTrace();
+//                }
+//            }
+//        }
+//    }
 
 
     //여기까지
