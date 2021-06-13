@@ -27,7 +27,7 @@
                     android:backgroundTint="@color/colorAccent1"
                     android:textStyle="bold|italic"
                     android:layout_margin="15dp"
-                    android:text="뭔가 들어갈 게"/>
+                    android:text="기분 통계"/>
 
                 <Button
                     android:layout_width="wrap_content"
@@ -37,7 +37,7 @@
                     android:textStyle="bold|italic"
                     android:id="@+id/btn5"
                     android:layout_margin="15dp"
-                    android:text="잇나 없겟죠"/>
+                    android:text="활동 통계"/>
 
             </TableRow>
 
