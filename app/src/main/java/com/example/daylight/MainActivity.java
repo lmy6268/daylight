@@ -14,7 +14,7 @@ public class MainActivity extends AppCompatActivity {
     private FragmentManager fm;
     private FragmentTransaction ft;
     private passwordFragment passwordfragment;
-    private checkMoodFragment checkMoodfragment;
+
     private mainFragment mainfragment;
     private settingFragment settingFragment;
     private MainActivity MainActivity;
@@ -28,7 +28,7 @@ public class MainActivity extends AppCompatActivity {
 
         mainfragment= new mainFragment();
         passwordfragment = new passwordFragment();
-        checkMoodfragment = new checkMoodFragment();
+
         settingFragment= new settingFragment();
 
         bottomNavigationView = findViewById(R.id.bottomNavi);
@@ -37,9 +37,7 @@ public class MainActivity extends AppCompatActivity {
                 case R.id.active_home:
                     changeFragemnt(0);
                     break;
-                case R.id.active_chart:
-                    changeFragemnt(1);
-                    break;
+
                 case R.id.active_achievements:
                     changeFragemnt(2);
                     break;
@@ -60,9 +58,6 @@ public class MainActivity extends AppCompatActivity {
                 break;
             case 1://메인화면
                 getSupportFragmentManager().beginTransaction().replace(R.id.container,mainfragment).commit();
-                break;
-            case 2: // 오늘의 기분 선택화면
-                getSupportFragmentManager().beginTransaction().replace(R.id.container,checkMoodfragment).commit();
                 break;
             case 3://설정 화면
                 getSupportFragmentManager().beginTransaction().replace(R.id.container,settingFragment).commit();

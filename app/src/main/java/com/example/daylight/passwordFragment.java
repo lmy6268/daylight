@@ -45,14 +45,14 @@ public class passwordFragment extends Fragment {
         btnRegister = rootView.findViewById(R.id.btnRegister);
 
 
-        GradientDrawable bgShape = (GradientDrawable) pwd1.getBackground();
-        bgShape.setColor(Color.BLUE);
-        GradientDrawable bgShape2 = (GradientDrawable) pwd2.getBackground();
-        bgShape.setColor(Color.BLUE);
-        GradientDrawable bgShape3 = (GradientDrawable) pwd3.getBackground();
-        bgShape.setColor(Color.BLUE);
-        GradientDrawable bgShape4 = (GradientDrawable) pwd4.getBackground();
-        bgShape.setColor(Color.BLUE);
+//        GradientDrawable bgShape = (GradientDrawable) pwd1.getBackground();
+//        bgShape.setColor(Color.BLUE);
+//        GradientDrawable bgShape2 = (GradientDrawable) pwd2.getBackground();
+//        bgShape.setColor(Color.BLUE);
+//        GradientDrawable bgShape3 = (GradientDrawable) pwd3.getBackground();
+//        bgShape.setColor(Color.BLUE);
+//        GradientDrawable bgShape4 = (GradientDrawable) pwd4.getBackground();
+//        bgShape.setColor(Color.BLUE);
         btnAccess.setOnClickListener(new View.OnClickListener() {
 
             @Override
