@@ -20,7 +20,8 @@ public class mainFragment extends Fragment {
     customDialog  customDialog;
     ViewGroup rootView;
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
         rootView = (ViewGroup) inflater.inflate(R.layout.fragment_main, container, false);
 
         Button btn1 = rootView.findViewById(R.id.btn1);
@@ -32,6 +33,8 @@ public class mainFragment extends Fragment {
                 customDialog.showDiarylog();
             }
         });
+
+
         btn2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
