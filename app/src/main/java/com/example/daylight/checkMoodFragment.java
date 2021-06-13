@@ -9,14 +9,14 @@ import android.view.WindowManager;
 import android.widget.Button;
 
 
-public class checkActFragment extends Fragment {
+public class checkMoodFragment extends Fragment {
 
     customDialog  customDialog;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        ViewGroup rootView= (ViewGroup) inflater.inflate(R.layout.fragment_check_act,
+        ViewGroup rootView= (ViewGroup) inflater.inflate(R.layout.fragment_check_mood,
                 container, false);
 
         Button btn4 = rootView.findViewById(R.id.btn4);
@@ -26,24 +26,18 @@ public class checkActFragment extends Fragment {
         btn4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                showDiarylog();
+
             }
         });
         btn5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                showDiarylog();
+
             }
         });
 
         return rootView;
     }
 
-    public void showDiarylog(){
-        customDialog octDialog = new customDialog(getContext(),R.layout.dialog_diary);
-        octDialog.setCanceledOnTouchOutside(true);
-        octDialog.setCancelable(true);
-        octDialog.getWindow().setLayout(WindowManager.LayoutParams.MATCH_PARENT, WindowManager.LayoutParams.MATCH_PARENT);
-        octDialog.show();
-    }
+
 }
