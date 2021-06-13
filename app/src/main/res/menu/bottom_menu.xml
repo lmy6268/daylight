@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/active_home"
+        android:enabled="true"
+        android:icon="@drawable/ic1"
+        android:title= "홈" />
+
+    <item
+        android:id="@+id/active_chart"
+        android:enabled="true"
+        android:icon="@drawable/ic2"
+        android:title= "분석" />
+
+    <item
+        android:id="@+id/active_achievements"
+        android:enabled="true"
+        android:icon="@drawable/ic3"
+        android:title= "업적" />
+
+
+    <item
+        android:id="@+id/active_setup"
+        android:enabled="true"
+        android:icon="@drawable/ic4"
+        android:title= "설정" />
+
+
+
+</menu>
