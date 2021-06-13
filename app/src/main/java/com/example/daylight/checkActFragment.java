@@ -16,7 +16,7 @@ public class checkActFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        ViewGroup rootView= (ViewGroup) inflater.inflate(R.layout.fragment_diary,
+        ViewGroup rootView= (ViewGroup) inflater.inflate(R.layout.fragment_check_act,
                 container, false);
 
         Button btn4 = rootView.findViewById(R.id.btn4);

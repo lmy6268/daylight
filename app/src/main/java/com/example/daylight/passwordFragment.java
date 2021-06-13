@@ -112,9 +112,9 @@ public class passwordFragment extends Fragment {
                     try {
                         System.out.println(pwd);
                         savePassword(pwd);
-
                     } catch (FileNotFoundException e) {
                         e.printStackTrace();
+                        System.out.println("테스트입니다");
                     }
                 } else {
                     Toast.makeText(getContext(), "이미 비밀번호가 등록되어 있습니다", Toast.LENGTH_SHORT).show();
