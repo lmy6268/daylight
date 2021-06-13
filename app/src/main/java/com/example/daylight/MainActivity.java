@@ -5,7 +5,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 
 public class MainActivity extends AppCompatActivity {
-    diaryFragment diaryfragment;
     passwordFragment passwordfragment;
     checkActFragment checkActfragment;
     mainFragment mainfragment;
@@ -13,7 +12,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        diaryfragment =new diaryFragment();
+
         passwordfragment = new passwordFragment();
         checkActfragment = new checkActFragment();
         mainfragment= new mainFragment();
@@ -31,9 +30,7 @@ public class MainActivity extends AppCompatActivity {
             case 2: // 오늘의 기분 선택화면
                 getSupportFragmentManager().beginTransaction().replace(R.id.container,checkActfragment).addToBackStack(null).commit();
                 break;
-            case 3://일기 작성 화면
-                getSupportFragmentManager().beginTransaction().replace(R.id.container,diaryfragment).addToBackStack(null).commit();
-                break;
+
         }
     }
 }
