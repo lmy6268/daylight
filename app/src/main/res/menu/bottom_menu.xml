@@ -8,12 +8,6 @@
         android:title= "홈" />
 
     <item
-        android:id="@+id/active_chart"
-        android:enabled="true"
-        android:icon="@drawable/ic2"
-        android:title= "분석" />
-
-    <item
         android:id="@+id/active_achievements"
         android:enabled="true"
         android:icon="@drawable/ic3"
