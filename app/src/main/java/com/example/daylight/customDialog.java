@@ -5,6 +5,7 @@ import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.content.res.ColorStateList;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
@@ -13,6 +14,9 @@ import android.graphics.drawable.DrawableContainer;
 import android.graphics.drawable.GradientDrawable;
 import android.graphics.drawable.LayerDrawable;
 import android.graphics.drawable.StateListDrawable;
+import android.net.Uri;
+import android.os.Bundle;
+import android.provider.MediaStore;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.DisplayMetrics;
@@ -27,6 +31,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.core.content.ContextCompat;
 
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
@@ -43,6 +48,7 @@ import java.util.Calendar;
 
 
 import static android.content.Context.MODE_PRIVATE;
+import static androidx.core.app.ActivityCompat.startActivityForResult;
 
 public class customDialog extends Dialog {
     private Context context;
@@ -50,6 +56,7 @@ public class customDialog extends Dialog {
     int deviceWidth = disp.widthPixels;
     int deviceHeight = disp.heightPixels;
     Boolean isSaved = true;
+    String date = LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd"));
 
     public customDialog(@NonNull Context context) {
         super(context);
@@ -63,8 +70,6 @@ public class customDialog extends Dialog {
         Button btnSave, btnImage, btnBgm, btnEmo;
         TextView tvDate;
         EditText editTitle, editDiary;
-
-        String date = LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd"));
 
 
         final View innerView = getLayoutInflater().inflate(R.layout.dialog_diary, null);
@@ -131,7 +136,7 @@ public class customDialog extends Dialog {
 
             @Override
             public void afterTextChanged(Editable s) {
-                isSaved=false;
+                isSaved = false;
             }
         });
         btnImage.setOnClickListener(v -> {
@@ -150,9 +155,26 @@ public class customDialog extends Dialog {
         btnEmo.setOnClickListener(v -> {
             showEmolog(date, btnEmo);
         });
+//        btnImage.setOnClickListener(v -> {
+//            Intent intent = new Intent(Intent.ACTION_PICK);
+//            intent.setType(android.provider.MediaStore.Images.Media.CONTENT_TYPE);
+//            startActivityForResult(intent, RequestCode.PICK_IMAGE);
+//            Drawable img = ContextCompat.getDrawable(context, );
+//            txtVw.setCompoundDrawablesWithIntrinsicBounds(img, null, null, null);
+//        });
 
     }
 
+//    //이미지 삽입 관련
+//    Intent intent = new Intent(Intent.ACTION_PICK);
+//               intent.setDataAndType(android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI,"image/*");
+//
+//    startActivityForResult(intent, GET_GALLERY_IMAGE);
+//
+//}
+
+
+    //여기까지
     public void saveDiary(String text, String Date) throws IOException {
         FileOutputStream fos = null;
 
@@ -168,7 +190,7 @@ public class customDialog extends Dialog {
         dos.flush();
         dos.close();
         Toast.makeText(getContext(), "저장되었습니다", Toast.LENGTH_SHORT).show();
-        isSaved=true;
+        isSaved = true;
     }
 
     public String loadDiary(String Date) throws IOException {
