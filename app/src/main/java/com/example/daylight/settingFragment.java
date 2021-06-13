@@ -18,7 +18,7 @@ public class settingFragment extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        ViewGroup rootView = (ViewGroup) inflater.inflate(R.layout.fragment_main, container, false);
+        ViewGroup rootView = (ViewGroup) inflater.inflate(R.layout.fragment_setting, container, false);
 
         Button btn6 = rootView.findViewById(R.id.btn6);
         Button btn7 = rootView.findViewById(R.id.btn7);
