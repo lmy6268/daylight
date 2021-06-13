@@ -31,13 +31,10 @@ public class customDialog extends Dialog {
     DisplayMetrics disp = getContext().getResources().getDisplayMetrics();
     int deviceWidth = disp.widthPixels;
     int deviceHeight = disp.heightPixels;
-
     public customDialog(@NonNull Context context) {
         super(context);
         this.context = context;
-
     }
-
     //이어인픽셀을 통해 일기입력 추가 받기
     public void showDiarylog() {
 
@@ -103,11 +100,25 @@ public class customDialog extends Dialog {
         result = dis.readUTF();
         return result;
     }
-    public void showEmolog()//감정 선택 다이어로그 창 띄움
+    public void send(String a){ };
+    public String showEmolog()//감정 선택 다이어로그 창 띄움
     {
         final View innerView = getLayoutInflater().inflate(R.layout.emolog, null);
-        Button[] btnEmo;
+        Button[] btnEmo= {innerView.findViewById(R.id.btnEmo1),innerView.findViewById(R.id.btnEmo2),innerView.findViewById(R.id.btnEmo3),innerView.findViewById(R.id.btnEmo4),
+                innerView.findViewById(R.id.btnEmo5),innerView.findViewById(R.id.btnEmo6)};
 
+        for(int i=0;i<btnEmo.length;i++){
+            final int index=i;
+
+            btnEmo[index].setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    send(btnEmo[index].getTag().toString());
+
+                }
+            });
+
+        }
         customDialog octDialog = new customDialog(getContext());
         octDialog.setContentView(innerView);
         octDialog.setCanceledOnTouchOutside(false);// 다이알로그 바깥영역 터치시, 다이알로그 닫힘
@@ -115,5 +126,6 @@ public class customDialog extends Dialog {
         WindowManager.LayoutParams params = octDialog.getWindow().getAttributes();
         params.width = (int) (deviceWidth * 0.8);
         params.height = (int) (deviceHeight * 0.6);
+        octDialog.show();
     }
 }
